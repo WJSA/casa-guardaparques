@@ -219,3 +219,49 @@
   window.addEventListener('load', () => { measure(); frame(); });
   requestAnimationFrame(() => { measure(); frame(); });
 })();
+
+/* ═══════════════════════════════════════════════════════════
+   BACKGROUND MUSIC — extracted from the project video.
+   Browsers block autoplay-with-sound, so we start it on the
+   first user gesture and give a toggle button for control.
+   ═══════════════════════════════════════════════════════════ */
+(() => {
+  'use strict';
+  const bgm = document.getElementById('bgm');
+  const btn = document.getElementById('soundBtn');
+  if (!bgm || !btn) return;
+
+  bgm.volume = 0.55;
+  let started = false;
+
+  function setOn(on) {
+    btn.classList.toggle('is-on', on);
+    btn.setAttribute('aria-pressed', String(on));
+    btn.setAttribute('aria-label', on ? 'Silenciar música de fondo' : 'Activar música de fondo');
+  }
+
+  function play() {
+    bgm.play().then(() => setOn(true)).catch(() => setOn(false));
+  }
+
+  // Start on the first user interaction anywhere on the page.
+  function firstGesture() {
+    if (started) return;
+    started = true;
+    play();
+    window.removeEventListener('pointerdown', firstGesture);
+    window.removeEventListener('keydown', firstGesture);
+    window.removeEventListener('touchstart', firstGesture);
+  }
+  window.addEventListener('pointerdown', firstGesture, { once: false });
+  window.addEventListener('keydown', firstGesture);
+  window.addEventListener('touchstart', firstGesture, { passive: true });
+
+  // Toggle button controls play/pause directly.
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    started = true;
+    if (bgm.paused) { play(); }
+    else { bgm.pause(); setOn(false); }
+  });
+})();

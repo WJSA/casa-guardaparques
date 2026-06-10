@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=6" />
+  <link rel="stylesheet" href="css/style.css?v=8" />
 </head>
 <body>
 
@@ -31,6 +31,12 @@
     <span class="topbar__mark">Bajo el Palio del Ávila</span>
     <span class="topbar__meta">Bambú · Sabas Nieves</span>
   </header>
+
+  <!-- ─── MÚSICA DE FONDO ─── -->
+  <audio id="bgm" src="assets/video/music.m4a" loop preload="auto"></audio>
+  <button id="soundBtn" class="sound" type="button" aria-label="Activar música de fondo" aria-pressed="false">
+    <span class="sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  </button>
 
   <main>
 
@@ -232,16 +238,14 @@
         <div class="closing__rule"></div>
         <p class="closing__project">Bajo el Palio del Ávila</p>
         <p class="closing__credits">
-          <!-- TODO: completar sección y nombres del equipo -->
           Casa de Guardaparques · Taller de Diseño VI<br>
-          Universidad Católica Andrés Bello · Sección ???<br>
-          ???
+          Universidad Católica Andrés Bello<br>
         </p>
       </div>
     </section>
 
   </main>
 
-  <script src="js/main.js?v=4"></script>
+  <script src="js/main.js?v=8"></script>
 </body>
 </html>

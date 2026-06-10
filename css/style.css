@@ -287,11 +287,11 @@ html:not(.scrub) .manifesto .word { opacity: 1; }
   /* strong through the bottom half (where the text lives), clear up top */
   background: linear-gradient(
     to top,
-    rgba(10,9,8,0.95) 0%,
-    rgba(10,9,8,0.86) 26%,
-    rgba(10,9,8,0.55) 48%,
-    rgba(10,9,8,0.18) 70%,
-    rgba(10,9,8,0.04) 100%);
+    rgba(10,9,8,0.96) 0%,
+    rgba(10,9,8,0.90) 30%,
+    rgba(10,9,8,0.74) 50%,
+    rgba(10,9,8,0.42) 68%,
+    rgba(10,9,8,0.10) 100%);
 }
 .stage__copy {
   position: relative;
@@ -531,19 +531,33 @@ html.scrub .hero__inner { will-change: transform, opacity; }
 
 /* ───────── MOBILE (≤900px): full-bleed cinematic for EVERY scene ───────── */
 @media (max-width: 900px) {
-  /* SPLIT: full-screen pinned media that crossfades; copy reveals below it */
-  html.scrub .split { display: block; }
+  /* SPLIT (02/03) on phones: NORMAL scroll — both renders stacked, then
+     readable text on solid dark background. No sticky pin (the full-screen
+     pin felt like a dead zone on mobile and buried the text). */
+  html.scrub .split { display: block; min-height: 0; height: auto; }
+  html.scrub .split__media {
+    position: relative;
+    top: auto;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
   html.scrub .split__media .layer {
-    position: absolute;
-    inset: 0;
+    position: relative;
+    inset: auto;
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
   }
-  html.scrub .split__copy {
-    padding: clamp(3rem, 11vw, 5rem) var(--pad) clamp(4rem, 15vw, 7rem);
+  html.scrub .split__media .layer[data-layer="1"] {
+    position: relative;
+    opacity: 1 !important;
+    margin-top: 2px;
   }
-  html.scrub .media__caption { display: flex; }
+  html.scrub .split__copy {
+    padding: clamp(2.6rem, 9vw, 4rem) var(--pad) clamp(3rem, 11vw, 5rem);
+  }
+  html.scrub .media__caption { display: none; }
 
   /* shorter rail runway on phones */
   html.scrub .rail { height: 300vh; }
@@ -591,4 +605,52 @@ html:not(.scrub) .media__caption { display: none; }
 @media (max-width: 480px) {
   .hero__title { font-size: clamp(2.7rem, 13vw, 4rem); }
   .duo { gap: 1.2rem; }
+}
+
+/* ═══════════ SOUND TOGGLE ═══════════ */
+.sound {
+  position: fixed;
+  z-index: 160;
+  bottom: clamp(1.2rem, 3vw, 2rem);
+  right: clamp(1.2rem, 3vw, 2rem);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 162, 75, 0.5);
+  background: rgba(10, 9, 8, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.4s var(--ease), transform 0.4s var(--ease), opacity 0.6s;
+}
+.sound:hover { border-color: var(--accent); transform: scale(1.06); }
+.sound__bars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 16px;
+}
+.sound__bars i {
+  width: 2.5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 2px;
+  transform-origin: center bottom;
+}
+/* playing → animated equalizer */
+.sound.is-on .sound__bars i {
+  animation: eq 0.9s ease-in-out infinite;
+}
+.sound.is-on .sound__bars i:nth-child(2) { animation-delay: 0.18s; }
+.sound.is-on .sound__bars i:nth-child(3) { animation-delay: 0.36s; }
+.sound.is-on .sound__bars i:nth-child(4) { animation-delay: 0.12s; }
+@keyframes eq {
+  0%, 100% { height: 4px; }
+  50%      { height: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sound.is-on .sound__bars i { animation: none; height: 11px; }
 }
