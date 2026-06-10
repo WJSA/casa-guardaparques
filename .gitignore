@@ -1,0 +1,17 @@
+# ── Source assets (kept locally, NOT published) ──────────────
+# The original renders are ~50 MB each (≈400 MB total) and the
+# source videos are 60–70 MB. Only the optimized web versions in
+# assets/renders/*.jpg and assets/video/hero.mp4 are committed.
+assets/*.PNG
+assets/*.png
+assets/*.MOV
+assets/*.mov
+assets/Video render TDP VI.mp4
+
+# Frame-check / scratch images
+assets/**/_*.jpg
+
+# OS / editor cruft
+Thumbs.db
+.DS_Store
+desktop.ini

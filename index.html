@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0908" />
+  <title>Bajo el Palio del Ávila — Estructura habitable de bambú</title>
+  <meta name="description" content="Una estructura habitable de bambú en Sabas Nieves, Parque Nacional El Ávila. Un refugio permeable inspirado en la lógica de un paraguas." />
+
+  <!-- Open Graph (para cuando se comparta el enlace del QR) -->
+  <meta property="og:title" content="Bajo el Palio del Ávila" />
+  <meta property="og:description" content="Una estructura habitable de bambú en Sabas Nieves, El Ávila." />
+  <meta property="og:image" content="assets/renders/render-01.jpg" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=6" />
+</head>
+<body>
+
+  <!-- ─── INTRO VEIL ─── -->
+  <div class="veil" id="veil" aria-hidden="true">
+    <span class="veil__mark">El Ávila</span>
+  </div>
+
+  <!-- ─── PROGRESS + WORDMARK ─── -->
+  <div class="progress" id="progress"><span></span></div>
+  <header class="topbar" id="topbar">
+    <span class="topbar__mark">Bajo el Palio del Ávila</span>
+    <span class="topbar__meta">Bambú · Sabas Nieves</span>
+  </header>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="scene hero" data-scene="hero">
+      <div class="hero__pin pin">
+        <video
+          class="hero__video"
+          id="heroVideo"
+          data-src="assets/video/hero.mp4"
+          poster="assets/renders/render-01.jpg"
+          muted loop playsinline preload="none"
+        ></video>
+        <div class="hero__grad"></div>
+        <div class="hero__inner">
+          <p class="eyebrow">Casa de Guardaparques · Taller de Diseño VI</p>
+          <h1 class="hero__title">Bajo el Palio <em>del Ávila</em></h1>
+          <p class="hero__sub">Una estructura habitable de bambú · Sabas Nieves, El Ávila</p>
+        </div>
+        <div class="scrollcue" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+
+    <!-- ═══ MANIFIESTO ═══ -->
+    <section class="manifesto">
+      <p class="manifesto__line">
+        <span class="word">No</span> <span class="word">busca</span>
+        <span class="word">dominar</span> <span class="word">el</span>
+        <span class="word">paisaje.</span>
+        <br>
+        <span class="word accent">Aprende</span> <span class="word accent">a</span>
+        <span class="word accent">desaparecer</span> <span class="word accent">en</span>
+        <span class="word accent">él.</span>
+      </p>
+    </section>
+
+    <!-- ═══ 01 · EL UMBRAL (stage) ═══ -->
+    <section class="scene stage" data-scene="stage" data-layers="1">
+      <div class="stage__pin pin">
+        <div class="stage__media">
+          <img class="layer" data-layer="0"
+            srcset="assets/renders/render-01-sm.jpg 1440w, assets/renders/render-01.jpg 2560w"
+            sizes="100vw" src="assets/renders/render-01.jpg"
+            alt="El conjunto integrado en la densa vegetación del Ávila, al atardecer" />
+          <div class="stage__scrim"></div>
+        </div>
+        <div class="stage__copy">
+          <span class="chapter__num">01</span>
+          <h2 class="chapter__title">El Umbral<br>de la Montaña</h2>
+          <p class="chapter__body">
+            Subir Sabas Nieves es un ritual de esfuerzo, verde y neblina. Donde la
+            naturaleza se vuelve más imponente, emerge una silueta ligera: un refugio
+            permeable, libre y suspendido, inspirado en la lógica de un paraguas. Una
+            estructura que respira con la montaña y ofrece cobijo tanto al guardaparque
+            que la custodia como al excursionista que la transita.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 02 · HABITAR LA PENDIENTE (editorial, crossfade) ═══ -->
+    <section class="scene split" data-scene="split" data-layers="2">
+      <div class="split__media pin">
+        <img class="layer" data-layer="0"
+          srcset="assets/renders/render-02-sm.jpg 1440w, assets/renders/render-02.jpg 2560w"
+          sizes="(max-width: 900px) 100vw, 55vw" src="assets/renders/render-02.jpg"
+          alt="Vista aérea cenital: las dos cubiertas de membrana y la planta sobre la pendiente" />
+        <img class="layer" data-layer="1"
+          srcset="assets/renders/render-03-sm.jpg 1440w, assets/renders/render-03.jpg 2560w"
+          sizes="(max-width: 900px) 100vw, 55vw" src="assets/renders/render-03.jpg"
+          alt="Las columnas de bambú y el puente que se adaptan a las cotas del terreno" loading="lazy" />
+        <span class="media__caption"><span class="dot"></span>Adaptación a las cotas · Sabas Nieves</span>
+      </div>
+      <div class="split__copy">
+        <span class="chapter__num">02</span>
+        <h2 class="chapter__title">Habitar<br>la Pendiente</h2>
+        <p class="lede">El terreno no se altera; se acompaña.</p>
+        <p class="chapter__body">
+          La arquitectura resuelve la topografía del Ávila escalonándose en concordancia
+          con las cotas del paisaje. Esta estrategia fragmenta el programa en dos
+          realidades complementarias.
+        </p>
+        <div class="duo">
+          <div class="duo__item">
+            <span class="duo__k">Abajo</span>
+            <span class="duo__v">Lo público</span>
+            <p>Una zona baja y abierta que abraza el flujo de la ruta.</p>
+          </div>
+          <div class="duo__item">
+            <span class="duo__k">Arriba</span>
+            <span class="duo__v">Lo privado</span>
+            <p>Un área elevada que se repliega en busca de intimidad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 03 · REFUGIO PÚBLICO (editorial, crossfade) ═══ -->
+    <section class="scene split split--reverse" data-scene="split" data-layers="2">
+      <div class="split__media pin">
+        <img class="layer" data-layer="0"
+          srcset="assets/renders/render-04-sm.jpg 1440w, assets/renders/render-04.jpg 2560w"
+          sizes="(max-width: 900px) 100vw, 55vw" src="assets/renders/render-04.jpg"
+          alt="Planta baja: la terraza redonda de encuentro abierta al sotobosque" loading="lazy" />
+        <img class="layer" data-layer="1"
+          srcset="assets/renders/render-05-sm.jpg 1440w, assets/renders/render-05.jpg 2560w"
+          sizes="(max-width: 900px) 100vw, 55vw" src="assets/renders/render-05.jpg"
+          alt="El baño público resuelto íntegramente en bambú y caña tejida" loading="lazy" />
+        <span class="media__caption"><span class="dot"></span>Planta baja · Punto de encuentro</span>
+      </div>
+      <div class="split__copy">
+        <span class="chapter__num">03</span>
+        <h2 class="chapter__title">El Encuentro<br>y el Refugio<br>Público</h2>
+        <p class="lede">Los límites entre el adentro y el afuera se disuelven.</p>
+        <p class="chapter__body">
+          Al nivel del camino, la planta baja se convierte en un punto de encuentro donde
+          el guardaparque recibe a la comunidad y a los caminantes. Una cocina equipada,
+          el baño público y las áreas de recreación se abren directamente al sotobosque,
+          permitiendo que la brisa y la luz filtrada del Ávila inunden cada rincón.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══ 04 · INTIMIDAD ELEVADA (stage, clímax) ═══ -->
+    <section class="scene stage stage--peak" data-scene="stage" data-layers="2">
+      <div class="stage__pin pin">
+        <div class="stage__media">
+          <img class="layer" data-layer="0"
+            srcset="assets/renders/render-06-sm.jpg 1440w, assets/renders/render-06.jpg 2560w"
+            sizes="100vw" src="assets/renders/render-06.jpg"
+            alt="La cubierta de membrana iluminada como una linterna sobre el mar, al anochecer" loading="lazy" />
+          <img class="layer" data-layer="1"
+            srcset="assets/renders/render-07-sm.jpg 1440w, assets/renders/render-07.jpg 2560w"
+            sizes="100vw" src="assets/renders/render-07.jpg"
+            alt="Mirador íntimo con hamaca, suspendido entre las copas frente al horizonte marino" loading="lazy" />
+          <div class="stage__scrim"></div>
+        </div>
+        <div class="stage__copy stage__copy--center">
+          <span class="chapter__num">04</span>
+          <h2 class="chapter__title">La Intimidad<br>Elevada</h2>
+          <p class="chapter__body">
+            Elevadas entre las copas de los árboles, las habitaciones se convierten en
+            miradores íntimos. Es el descanso bajo la cubierta protectora, donde el sonido
+            de la montaña sustituye al de la ciudad.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 05 · LA HONESTIDAD DEL BAMBÚ (rail horizontal) ═══ -->
+    <section class="scene rail" data-scene="rail">
+      <div class="rail__pin pin">
+        <div class="rail__track" id="railTrack">
+          <div class="rail__intro">
+            <span class="chapter__num">05</span>
+            <h2 class="chapter__title">La Honestidad<br>del Bambú</h2>
+            <p class="chapter__body">
+              Una técnica constructiva honesta y local. Un sistema de superposición
+              rítmica: un elemento descansa sobre el otro, sumando capas que ganan rigidez
+              y configuran el esqueleto del paraguas. <span class="arrow">→</span>
+            </p>
+          </div>
+          <figure class="rail__card">
+            <img src="assets/renders/render-08.jpg"
+              srcset="assets/renders/render-08-sm.jpg 1440w, assets/renders/render-08.jpg 2560w"
+              sizes="80vw" alt="Detalle interior: estructura de bambú, caña tejida y la membrana" loading="lazy" />
+            <figcaption>Superposición rítmica · El esqueleto</figcaption>
+          </figure>
+          <figure class="rail__card">
+            <img src="assets/renders/render-03.jpg"
+              srcset="assets/renders/render-03-sm.jpg 1440w, assets/renders/render-03.jpg 2560w"
+              sizes="80vw" alt="Uniones apernadas en los puntos de mayor demanda geométrica" loading="lazy" />
+            <figcaption>Uniones apernadas · Rigidez</figcaption>
+          </figure>
+          <figure class="rail__card">
+            <img src="assets/renders/render-05.jpg"
+              srcset="assets/renders/render-05-sm.jpg 1440w, assets/renders/render-05.jpg 2560w"
+              sizes="80vw" alt="Textura y ritmo del bambú en los cerramientos" loading="lazy" />
+            <figcaption>Caña tejida · El cerramiento</figcaption>
+          </figure>
+          <div class="rail__outro">
+            <p>
+              La arquitectura sostenible puede ser, al mismo tiempo, estructuralmente
+              rigurosa, ligera y profundamente ligada a su territorio.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CIERRE ═══ -->
+    <section class="closing" data-scene="closing">
+      <img class="closing__bg"
+        srcset="assets/renders/render-06-sm.jpg 1440w, assets/renders/render-06.jpg 2560w"
+        sizes="100vw" src="assets/renders/render-06.jpg" alt="" aria-hidden="true" loading="lazy" />
+      <div class="closing__grad"></div>
+      <div class="closing__inner">
+        <p class="closing__quote">Una estructura que respira con la montaña.</p>
+        <div class="closing__rule"></div>
+        <p class="closing__project">Bajo el Palio del Ávila</p>
+        <p class="closing__credits">
+          <!-- TODO: completar sección y nombres del equipo -->
+          Casa de Guardaparques · Taller de Diseño VI<br>
+          Universidad Católica Andrés Bello · Sección ???<br>
+          ???
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/main.js?v=4"></script>
+</body>
+</html>
